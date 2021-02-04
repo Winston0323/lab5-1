@@ -4,6 +4,8 @@
 $(document).ready(function() {
 	initializePage();
 })
+$('.friends').click(projectClick);
+
 
 /*
  * Function that is called when the document is ready.
@@ -43,4 +45,10 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+}
+function projectClick(e){
+	e.preventDefault();
+	var name = $(this).find('h3');
+	var ana = anagrammedName(name.text());
+	name.text(ana);
 }
